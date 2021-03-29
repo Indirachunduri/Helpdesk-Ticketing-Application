@@ -1,0 +1,20 @@
+prompt --application/shared_components/navigation/breadcrumbs/support_tickets
+begin
+--   Manifest
+--     MENU: Support Tickets
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>9364619619048766
+,p_default_application_id=>10123
+,p_default_id_offset=>39116414319254909
+,p_default_owner=>'XXAPEX'
+);
+wwv_flow_api.create_menu(
+ p_id=>wwv_flow_api.id(11738139030536633)
+,p_name=>'Support Tickets'
+);
+wwv_flow_api.component_end;
+end;
+/
