@@ -1,0 +1,440 @@
+prompt --application/pages/page_00261
+begin
+--   Manifest
+--     PAGE: 00261
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>9364619619048766
+,p_default_application_id=>10123
+,p_default_id_offset=>39116414319254909
+,p_default_owner=>'XXAPEX'
+);
+wwv_flow_api.create_page(
+ p_id=>261
+,p_user_interface_id=>wwv_flow_api.id(68290528164477663)
+,p_tab_set=>'TS1'
+,p_name=>'Promotion'
+,p_step_title=>'Promotion'
+,p_reload_on_submit=>'A'
+,p_warn_on_unsaved_changes=>'N'
+,p_first_item=>'AUTO_FIRST_ITEM'
+,p_autocomplete_on_off=>'ON'
+,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
+,p_page_template_options=>'#DEFAULT#'
+,p_required_role=>wwv_flow_api.id(77166535263179064)
+,p_nav_list_template_options=>'#DEFAULT#'
+,p_help_text=>'No help is available for this page.'
+,p_last_updated_by=>'INDIRA.CHUNDURI'
+,p_last_upd_yyyymmddhh24miss=>'20210119231602'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(477389636496289449)
+,p_plug_name=>'Promotion'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(1628187113092186213)
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'BODY_3'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+,p_attribute_03=>'N'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(477397014302289552)
+,p_plug_name=>'Breadcrumb'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(1628189753601186215)
+,p_plug_display_sequence=>1
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_plug_item_display_point=>'BELOW'
+,p_menu_id=>wwv_flow_api.id(74204132342704640)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_api.id(1628210218163186292)
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(477389941897289451)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_button_name=>'SAVE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
+,p_button_image_alt=>'Apply Changes'
+,p_button_position=>'REGION_TEMPLATE_CHANGE'
+,p_button_condition=>'P261_PROMO_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'UPDATE'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(477390220851289451)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_button_name=>'CANCEL'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
+,p_button_image_alt=>'Cancel'
+,p_button_position=>'REGION_TEMPLATE_CLOSE'
+,p_button_redirect_url=>'f?p=&APP_ID.:260:&SESSION.::&DEBUG.:::'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(477389826141289451)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_button_name=>'CREATE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
+,p_button_image_alt=>'Create'
+,p_button_position=>'REGION_TEMPLATE_CREATE'
+,p_button_condition=>'P261_PROMO_ID'
+,p_button_condition_type=>'ITEM_IS_NULL'
+,p_database_action=>'INSERT'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(477390021192289451)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_button_name=>'DELETE'
+,p_button_action=>'REDIRECT_URL'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
+,p_button_image_alt=>'Delete'
+,p_button_position=>'REGION_TEMPLATE_DELETE'
+,p_button_redirect_url=>'javascript:apex.confirm(htmldb_delete_message,''DELETE'');'
+,p_button_execute_validations=>'N'
+,p_button_condition=>'P261_PROMO_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_database_action=>'DELETE'
+);
+wwv_flow_api.create_page_branch(
+ p_id=>wwv_flow_api.id(477390818111289465)
+,p_branch_action=>'f?p=&APP_ID.:260:&SESSION.&success_msg=#SUCCESS_MSG#'
+,p_branch_point=>'AFTER_PROCESSING'
+,p_branch_type=>'REDIRECT_URL'
+,p_branch_sequence=>1
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477391026426289473)
+,p_name=>'P261_PROMO_ID'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Promo Id'
+,p_source=>'PROMO_ID'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477391234594289478)
+,p_name=>'P261_PROMO_CODE'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Promo Code'
+,p_source=>'PROMO_CODE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>12
+,p_cMaxlength=>12
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Promotion code to identify the promotion for selection and reporting.'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477391416490289482)
+,p_name=>'P261_DESCRIPTION'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Description'
+,p_source=>'DESCRIPTION'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>32
+,p_cMaxlength=>50
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Description of the promotion. This will be displayed in select lists.'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477391626750289482)
+,p_name=>'P261_PROMO_COMMENT'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Promo Comment'
+,p_source=>'PROMO_COMMENT'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_TEXTAREA'
+,p_cSize=>50
+,p_cMaxlength=>1000
+,p_cHeight=>3
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Promo Comment. Describe the promotion in detail.'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'N'
+,p_attribute_03=>'N'
+,p_attribute_04=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477391814070289483)
+,p_name=>'P261_LEVEL_HDR_LINE'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'H'
+,p_prompt=>'Level Hdr Line'
+,p_source=>'LEVEL_HDR_LINE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_named_lov=>'HEADER OR LINE HL'
+,p_lov=>'.'||wwv_flow_api.id(477505330418319817)||'.'
+,p_cSize=>32
+,p_cMaxlength=>1
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Header or Line level promotion. Values and calculations are done for the entire order for header level. Values and calculations are done on a specific line item for line level promotions.'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477392040296289484)
+,p_name=>'P261_PROMO_METHOD_D_P'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'P'
+,p_prompt=>'Promo Method D P'
+,p_source=>'PROMO_METHOD_D_P'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_named_lov=>'DOLLAR OR PERCENT DP'
+,p_lov=>'.'||wwv_flow_api.id(477514321545326718)||'.'
+,p_cSize=>32
+,p_cMaxlength=>1
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Method - Dollar or Percent. To add or subtract a specific dollar value, select dollar. To add or subtract a percentage, select percent.'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477392243914289485)
+,p_name=>'P261_PROMO_TYPE_DI_SU'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'D'
+,p_prompt=>'Promo Type Di Su'
+,p_source=>'PROMO_TYPE_DI_SU'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_named_lov=>'DISCOUNT OR SURCHARGE DS'
+,p_lov=>'.'||wwv_flow_api.id(477523329510329034)||'.'
+,p_cSize=>32
+,p_cMaxlength=>1
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Select method of calculation Discount or Surcharge.'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477392421505289487)
+,p_name=>'P261_PROMO_VALUE'
+,p_item_sequence=>80
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Promo Value'
+,p_source=>'PROMO_VALUE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_NUMBER_FIELD'
+,p_cSize=>32
+,p_cMaxlength=>255
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Promotion Value. Enter dollar amount or percentage. For percent methods, enter whole number. For example, enter 2 for a 2%.'
+,p_attribute_03=>'right'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477392635952289489)
+,p_name=>'P261_PROMO_START_DATE'
+,p_item_sequence=>90
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Promo Start Date'
+,p_source=>'PROMO_START_DATE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>15
+,p_cMaxlength=>50
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Enter the date the promotion is valid or active from.'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477392828113289491)
+,p_name=>'P261_PROMO_END_DATE'
+,p_item_sequence=>100
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Promo End Date'
+,p_source=>'PROMO_END_DATE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>15
+,p_cMaxlength=>50
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Enter the date the promotion is valid or active to. This is the ending date of the promotion. It is the last day of the promotion.'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477393017505289492)
+,p_name=>'P261_ENABLED'
+,p_item_sequence=>110
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'Y'
+,p_prompt=>'Enabled'
+,p_source=>'ENABLED'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_SELECT_LIST'
+,p_named_lov=>'YES_NO'
+,p_lov=>'.'||wwv_flow_api.id(74349933634004268)||'.'
+,p_cSize=>32
+,p_cMaxlength=>1
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_help_text=>'Enabled. Disable to deactivate the promotion.'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(477393243648289493)
+,p_name=>'P261_LAST_UPDATE_DATE'
+,p_item_sequence=>120
+,p_item_plug_id=>wwv_flow_api.id(477389636496289449)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>'Last Update Date'
+,p_source=>'LAST_UPDATE_DATE'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_DATE_PICKER'
+,p_cSize=>32
+,p_cMaxlength=>255
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_read_only_when_type=>'ALWAYS'
+,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_attribute_04=>'button'
+,p_attribute_05=>'N'
+,p_attribute_07=>'NONE'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(477393614542289498)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_HEADER'
+,p_process_type=>'NATIVE_FORM_FETCH'
+,p_process_name=>'Fetch Row from WBS_SETUP_PROMO'
+,p_attribute_02=>'WBS_SETUP_PROMO'
+,p_attribute_03=>'P261_PROMO_ID'
+,p_attribute_04=>'PROMO_ID'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(477393833109289500)
+,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'Get PK'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin ',
+'    if :P261_PROMO_ID is null then',
+'        select "WBS_SETUP_PROMO_SEQ".nextval',
+'          into :P261_PROMO_ID',
+'          from dual;',
+'    end if;',
+'end;'))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(477389826141289451)
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(477394035641289501)
+,p_process_sequence=>30
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_FORM_PROCESS'
+,p_process_name=>'Process Row of WBS_SETUP_PROMO'
+,p_attribute_02=>'WBS_SETUP_PROMO'
+,p_attribute_03=>'P261_PROMO_ID'
+,p_attribute_04=>'PROMO_ID'
+,p_attribute_11=>'I:U:D'
+,p_attribute_12=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_success_message=>'Action Processed.'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(477394228288289502)
+,p_process_sequence=>40
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_SESSION_STATE'
+,p_process_name=>'reset page'
+,p_attribute_01=>'CLEAR_CACHE_CURRENT_PAGE'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(477390021192289451)
+);
+wwv_flow_api.component_end;
+end;
+/

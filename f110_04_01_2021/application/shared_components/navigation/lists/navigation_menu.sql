@@ -1,0 +1,149 @@
+prompt --application/shared_components/navigation/lists/navigation_menu
+begin
+--   Manifest
+--     LIST: Navigation Menu
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>9364619619048766
+,p_default_application_id=>10123
+,p_default_id_offset=>39116414319254909
+,p_default_owner=>'XXAPEX'
+);
+wwv_flow_api.create_list(
+ p_id=>wwv_flow_api.id(2816202282154888)
+,p_name=>'Navigation Menu'
+,p_list_status=>'PUBLIC'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2816112493154888)
+,p_list_item_display_sequence=>1
+,p_list_item_link_text=>'Support Home'
+,p_list_item_link_target=>'f?p=&APP_ID.:227:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'227,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2816010050154888)
+,p_list_item_display_sequence=>2
+,p_list_item_link_text=>'Home'
+,p_list_item_link_target=>'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'1,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815884172154888)
+,p_list_item_display_sequence=>3
+,p_list_item_link_text=>'Support Tickets'
+,p_list_item_link_target=>'f?p=&APP_ID.:167:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'167,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815714388154888)
+,p_list_item_display_sequence=>4
+,p_list_item_link_text=>'Ticket Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:155:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'155,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815707759154888)
+,p_list_item_display_sequence=>5
+,p_list_item_link_text=>'Catalog'
+,p_list_item_link_target=>'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'2,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815523844154888)
+,p_list_item_display_sequence=>6
+,p_list_item_link_text=>'Task Assignments'
+,p_list_item_link_target=>'f?p=&APP_ID.:156:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'156,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815432762154888)
+,p_list_item_display_sequence=>7
+,p_list_item_link_text=>'Saved Carts'
+,p_list_item_link_target=>'f?p=&APP_ID.:4:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'4,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815407846154888)
+,p_list_item_display_sequence=>8
+,p_list_item_link_text=>'Task Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:157:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'157,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815224250154888)
+,p_list_item_display_sequence=>9
+,p_list_item_link_text=>'Support Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:162:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'162,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815155837154888)
+,p_list_item_display_sequence=>10
+,p_list_item_link_text=>'Orders'
+,p_list_item_link_target=>'f?p=&APP_ID.:6:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'6,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2815070719154888)
+,p_list_item_display_sequence=>11
+,p_list_item_link_text=>'Quotes'
+,p_list_item_link_target=>'f?p=&APP_ID.:161:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'161,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2814976737154887)
+,p_list_item_display_sequence=>12
+,p_list_item_link_text=>'Sales'
+,p_list_item_link_target=>'f?p=&APP_ID.:161:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'161,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2814882688154887)
+,p_list_item_display_sequence=>13
+,p_list_item_link_text=>'Transactions'
+,p_list_item_link_target=>'f?p=&APP_ID.:8:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'8,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2814721942154887)
+,p_list_item_display_sequence=>14
+,p_list_item_link_text=>'Support'
+,p_list_item_link_target=>'f?p=&APP_ID.:227:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'227,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2814634405154887)
+,p_list_item_display_sequence=>15
+,p_list_item_link_text=>'Contact Us'
+,p_list_item_link_target=>'f?p=&APP_ID.:87:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'87,'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(2814572985154887)
+,p_list_item_display_sequence=>16
+,p_list_item_link_text=>'Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:5:&APP_SESSION.::&DEBUG.:'
+,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
+,p_list_item_current_for_pages=>'5,314,315,317,317,321'
+);
+wwv_flow_api.component_end;
+end;
+/
