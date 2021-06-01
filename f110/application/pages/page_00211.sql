@@ -59,7 +59,8 @@ wwv_flow_api.create_page(
 ,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '.header_card{',
 'font-size : 17px;',
-'line-height : 2',
+'line-height : 2;',
+'font-family: ui-monospace;',
 '}',
 'dd {',
 '    font-size : 15px;',
@@ -69,7 +70,7 @@ wwv_flow_api.create_page(
 ,p_overwrite_navigation_list=>'Y'
 ,p_page_is_public_y_n=>'Y'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210319151125'
+,p_last_upd_yyyymmddhh24miss=>'20210408223541'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(74835720648145566)

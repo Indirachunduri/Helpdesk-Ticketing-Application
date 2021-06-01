@@ -19,9 +19,9 @@ wwv_flow_api.create_theme_style(
 ,p_is_public=>true
 ,p_is_accessible=>false
 ,p_theme_roller_input_file_urls=>'#THEME_IMAGES#less/theme/Vita-Slate.less'
-,p_theme_roller_config=>'{"customCSS":".t-BreadcrumbRegion{\n    padding : 4px;\n}\n.t-Breadcrumb-label{\n    font-size : 12px;\n}\n.a-IRR-toolbar{\n    padding : 2px;\n}\n.a-IRR-container{\n    margin: 2px 0px 4px 0px;\n}\n.t-Region-headerItems.t-Region-headerItems--title{\'
-||'n    padding:5px;\n    font-size: 14px;\n}\n.t-Button{\n   padding:7px;\n   border-radius:20px; \n}","vars":{"@g_Accent-BG":"rgba(255, 255, 255, 1)","@g_Nav-BG":"rgba(12, 105, 162, 1)","@g_Nav-Active-BG":"rgba(51, 161, 191, 1)","@g_Region-Header-BG":'
-||'"rgba(194, 190, 194, 1)","@g_Container-BorderRadius":"2px","@Head-Height":"48px"}}'
+,p_theme_roller_config=>'{"customCSS":".t-BreadcrumbRegion{\n    padding : 6px;\n}\n.t-Breadcrumb-label{\n    font-size : 13px;\n    font-style:oblique\n}\n.a-IRR-toolbar{\n    padding : 2px;\n}\n.a-IRR-container{\n    margin: 2px 0px 4px 0px;\n}\n.t-Region-headerItems.t-Reg'
+||'ion-headerItems--title{\n    padding:5px;\n    font-size: 14px;\n}\n.t-Button{\n   padding:7px;\n   border-radius:20px; \n}","vars":{"@g_Accent-BG":"rgba(255, 255, 255, 1)","@g_Nav-BG":"rgba(12, 105, 162, 1)","@g_Nav-Active-BG":"rgba(51, 161, 191, 1)'
+||'","@g_Region-Header-BG":"rgba(169, 165, 184, 1)","@g_Container-BorderRadius":"2px","@Head-Height":"48px","@g_Region-BG":"rgba(255, 255, 255, 1)"}}'
 ,p_theme_roller_output_file_url=>'#THEME_DB_IMAGES#37951444900550121.css'
 ,p_theme_roller_read_only=>false
 );

@@ -38,7 +38,7 @@ wwv_flow_api.create_page(
 ,p_nav_list_template_options=>'#DEFAULT#'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210325175847'
+,p_last_upd_yyyymmddhh24miss=>'20210406203306'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(176601940792653822)
@@ -231,12 +231,8 @@ wwv_flow_api.create_report_columns(
 ,p_query_column_id=>1
 ,p_column_alias=>'ATT_ID'
 ,p_column_display_sequence=>1
-,p_column_heading=>'Edit'
-,p_column_link=>'f?p=&APP_ID.:163:&SESSION.::&DEBUG.:163:P163_ATT_ID:#ATT_ID#'
-,p_column_linktext=>'<img src="#IMAGE_PREFIX#ed-item.gif"  border="0">'
-,p_heading_alignment=>'LEFT'
-,p_lov_show_nulls=>'NO'
-,p_include_in_export=>'Y'
+,p_hidden_column=>'Y'
+,p_derived_column=>'N'
 );
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(176614140415653856)

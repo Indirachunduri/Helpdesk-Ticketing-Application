@@ -29,7 +29,7 @@ wwv_flow_api.create_page(
 ,p_required_role=>wwv_flow_api.id(77166840935190132)
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210325175339'
+,p_last_upd_yyyymmddhh24miss=>'20210416150452'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(74285134249812930)
@@ -1058,7 +1058,7 @@ wwv_flow_api.create_page_item(
 ,p_lov_null_value=>'%null%'
 ,p_cHeight=>1
 ,p_begin_on_new_line=>'N'
-,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_field_template=>wwv_flow_api.id(1628209327957186283)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'NO'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(

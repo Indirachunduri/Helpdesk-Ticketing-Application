@@ -34,7 +34,7 @@ wwv_flow_api.create_page(
 ,p_nav_list_template_options=>'#DEFAULT#'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210325180305'
+,p_last_upd_yyyymmddhh24miss=>'20210525221030'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(3089060079172095)
@@ -155,6 +155,7 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source_type=>'NATIVE_LIST'
 ,p_list_template_id=>wwv_flow_api.id(1628199892730186249)
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'NEVER'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(12026945548747498)
@@ -183,19 +184,17 @@ wwv_flow_api.create_page_plug(
 ,p_attribute_02=>'HTML'
 ,p_attribute_03=>'N'
 );
-wwv_flow_api.create_report_region(
+wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(37799778293803754)
-,p_name=>'Closed Tickets'
+,p_plug_name=>'Closed Tickets'
 ,p_parent_plug_id=>wwv_flow_api.id(37798780139803744)
-,p_template=>wwv_flow_api.id(1628185564176186208)
-,p_display_sequence=>20
-,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#'
-,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
-,p_display_point=>'BODY'
-,p_source_type=>'NATIVE_SQL_REPORT'
+,p_plug_template=>wwv_flow_api.id(1628185564176186208)
+,p_plug_display_sequence=>20
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
-,p_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select * from (',
 'select TASK_ID, ',
 'tc.task_category,',
@@ -220,100 +219,128 @@ wwv_flow_api.create_report_region(
 ')',
 '',
 ''))
-,p_ajax_enabled=>'Y'
-,p_query_row_template=>wwv_flow_api.id(1628196818171186240)
-,p_query_num_rows=>15
-,p_query_options=>'DERIVED_REPORT_COLUMNS'
-,p_query_show_nulls_as=>' - '
-,p_query_break_cols=>'0'
-,p_query_no_data_found=>'no data found'
-,p_query_num_rows_item=>'P155_ROWS'
-,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
-,p_query_row_count_max=>500
-,p_pagination_display_position=>'BOTTOM_RIGHT'
-,p_csv_output=>'N'
-,p_prn_output=>'N'
-,p_sort_null=>'F'
-,p_query_asc_image_attr=>'width="13" height="12" alt=""'
-,p_query_desc_image_attr=>'width="13" height="12" alt=""'
-,p_plug_query_strip_html=>'Y'
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_document_header=>'APEX'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>11
+,p_prn_height=>8.5
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header=>'Closed Tickets'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#EEEEEE'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'bold'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#FFFFFF'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+,p_prn_border_color=>'#666666'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11532804399662436)
-,p_query_column_id=>1
-,p_column_alias=>'TASK_ID'
-,p_column_display_sequence=>2
-,p_column_heading=>'Task Id'
-,p_hidden_column=>'Y'
-,p_display_as=>'WITHOUT_MODIFICATION'
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(53189800846535734)
+,p_max_row_count=>'1000000'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_show_detail_link=>'N'
+,p_show_notify=>'Y'
+,p_download_formats=>'CSV:HTML:XLSX:PDF:RTF:EMAIL'
+,p_owner=>'INDIRA.CHUNDURI'
+,p_internal_uid=>92306215165790643
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11533197181662436)
-,p_query_column_id=>2
-,p_column_alias=>'TASK_CATEGORY'
-,p_column_display_sequence=>3
-,p_column_heading=>'Task Category'
-,p_hidden_column=>'Y'
-,p_display_as=>'WITHOUT_MODIFICATION'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53189907345535735)
+,p_db_column_name=>'TASK_ID'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>'Task Id'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11533601518662436)
-,p_query_column_id=>3
-,p_column_alias=>'TASK_NAME'
-,p_column_display_sequence=>1
-,p_column_heading=>'Ticket Subject'
-,p_column_linktext=>'#TASK_NAME#'
-,p_heading_alignment=>'LEFT'
-,p_display_as=>'WITHOUT_MODIFICATION'
-,p_lov_show_nulls=>'NO'
-,p_include_in_export=>'Y'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53190019377535736)
+,p_db_column_name=>'TASK_CATEGORY'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'Task Category'
+,p_column_type=>'STRING'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11534019408662437)
-,p_query_column_id=>4
-,p_column_alias=>'SUPPORT_STATUS_CODE'
-,p_column_display_sequence=>6
-,p_column_heading=>'Support Status'
-,p_use_as_row_header=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53190138076535737)
+,p_db_column_name=>'TASK_NAME'
+,p_display_order=>30
+,p_column_identifier=>'C'
+,p_column_label=>'Task Name'
+,p_column_type=>'STRING'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11534467851662437)
-,p_query_column_id=>5
-,p_column_alias=>'LAST_UPDATE_DATE'
-,p_column_display_sequence=>4
-,p_column_heading=>'Last Update Date'
-,p_display_as=>'WITHOUT_MODIFICATION'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53190219482535738)
+,p_db_column_name=>'SUPPORT_STATUS_CODE'
+,p_display_order=>40
+,p_column_identifier=>'D'
+,p_column_label=>'Support Status Code'
+,p_column_type=>'STRING'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11534848630662437)
-,p_query_column_id=>6
-,p_column_alias=>'CREATION_DATE'
-,p_column_display_sequence=>5
-,p_column_heading=>'Creation Date'
-,p_hidden_column=>'Y'
-,p_display_as=>'WITHOUT_MODIFICATION'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53190342353535739)
+,p_db_column_name=>'LAST_UPDATE_DATE'
+,p_display_order=>50
+,p_column_identifier=>'E'
+,p_column_label=>'Last Updated Date'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11535254443662438)
-,p_query_column_id=>7
-,p_column_alias=>'UPD_BY_NAME'
-,p_column_display_sequence=>7
-,p_column_heading=>'Updated By'
-,p_use_as_row_header=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53190436711535740)
+,p_db_column_name=>'CREATION_DATE'
+,p_display_order=>60
+,p_column_identifier=>'F'
+,p_column_label=>'Creation Date'
+,p_column_type=>'DATE'
+,p_column_alignment=>'CENTER'
+,p_tz_dependent=>'N'
 );
-wwv_flow_api.create_report_columns(
- p_id=>wwv_flow_api.id(11535639075662438)
-,p_query_column_id=>8
-,p_column_alias=>'CRTD_BY_NAME'
-,p_column_display_sequence=>8
-,p_column_heading=>'Created By'
-,p_use_as_row_header=>'N'
-,p_derived_column=>'N'
-,p_include_in_export=>'Y'
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(53190522059535741)
+,p_db_column_name=>'UPD_BY_NAME'
+,p_display_order=>70
+,p_column_identifier=>'G'
+,p_column_label=>'Upd By Name'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(67800961173277692)
+,p_db_column_name=>'CRTD_BY_NAME'
+,p_display_order=>80
+,p_column_identifier=>'H'
+,p_column_label=>'Crtd By Name'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(67811509269278604)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'1069280'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'TASK_ID:TASK_CATEGORY:TASK_NAME:SUPPORT_STATUS_CODE:LAST_UPDATE_DATE:CREATION_DATE:UPD_BY_NAME:CRTD_BY_NAME'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(47511556472142024)
@@ -409,10 +436,8 @@ wwv_flow_api.create_worksheet_column(
 ,p_db_column_name=>'TASK_ID'
 ,p_display_order=>1
 ,p_column_identifier=>'A'
-,p_column_label=>'Task Id'
-,p_allow_pivot=>'N'
+,p_column_label=>'Ticket ID'
 ,p_column_type=>'NUMBER'
-,p_display_text_as=>'HIDDEN'
 ,p_static_id=>'TASK_ID'
 );
 wwv_flow_api.create_worksheet_column(
@@ -737,9 +762,10 @@ wwv_flow_api.create_worksheet_column(
 ,p_db_column_name=>'LAST_UPDATE_DATE'
 ,p_display_order=>36
 ,p_column_identifier=>'AJ'
-,p_column_label=>'Last Update'
+,p_column_label=>'Last Updated On'
 ,p_allow_pivot=>'N'
 ,p_column_type=>'DATE'
+,p_tz_dependent=>'N'
 ,p_static_id=>'LAST_UPDATE_DATE'
 );
 wwv_flow_api.create_worksheet_column(
@@ -942,10 +968,10 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
 ,p_display_rows=>5
-,p_report_columns=>'TASK_NAME:SUPPORT_REQUEST_PRIORITY:SUPPORT_STATUS_CODE:TICKET_STATUS_CODE:LAST_UPDATE_DATE:CREATION_DATE:TASK_CATEGORY:'
-,p_sort_column_1=>'LAST_UPDATE_DATE'
+,p_report_columns=>'TASK_ID:TASK_NAME:SUPPORT_REQUEST_PRIORITY:SUPPORT_STATUS_CODE:TICKET_STATUS_CODE:LAST_UPDATE_DATE:CREATION_DATE:TASK_CATEGORY:'
+,p_sort_column_1=>'TASK_ID'
 ,p_sort_direction_1=>'DESC'
-,p_sort_column_2=>'TASK_NAME'
+,p_sort_column_2=>'0'
 ,p_sort_direction_2=>'ASC'
 ,p_sort_column_3=>'0'
 ,p_sort_direction_3=>'ASC'
@@ -1010,6 +1036,18 @@ wwv_flow_api.create_jet_chart(
 ,p_gauge_angle_extent=>180
 ,p_show_gauge_value=>true
 );
+wwv_flow_api.component_end;
+end;
+/
+begin
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>9364619619048766
+,p_default_application_id=>10123
+,p_default_id_offset=>39116414319254909
+,p_default_owner=>'XXAPEX'
+);
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(52139869205568167)
 ,p_chart_id=>wwv_flow_api.id(52139457203568165)
@@ -1032,18 +1070,6 @@ wwv_flow_api.create_jet_chart_series(
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'outsideBarEdge'
-);
-wwv_flow_api.component_end;
-end;
-/
-begin
-wwv_flow_api.component_begin (
- p_version_yyyy_mm_dd=>'2020.10.01'
-,p_release=>'20.2.0.00.20'
-,p_default_workspace_id=>9364619619048766
-,p_default_application_id=>10123
-,p_default_id_offset=>39116414319254909
-,p_default_owner=>'XXAPEX'
 );
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(52140406064568168)
@@ -1103,6 +1129,19 @@ wwv_flow_api.create_page_button(
 ,p_grid_column_span=>1
 );
 wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(11527790988662431)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(47511556472142024)
+,p_button_name=>'Create_Support_Ticket'
+,p_button_static_id=>'new_support_ticket_id'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#:t-Button--primary:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(1628209471548186289)
+,p_button_image_alt=>'Create New Support Ticket'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:166:&SESSION.::&DEBUG.:166::'
+);
+wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(3088763304172092)
 ,p_button_sequence=>10
 ,p_button_plug_id=>wwv_flow_api.id(3089060079172095)
@@ -1113,20 +1152,6 @@ wwv_flow_api.create_page_button(
 ,p_button_image_alt=>'Create Support Ticket'
 ,p_button_position=>'TOP_AND_BOTTOM'
 ,p_button_redirect_url=>'f?p=&APP_ID.:166:&SESSION.::&DEBUG.:::'
-);
-wwv_flow_api.create_page_button(
- p_id=>wwv_flow_api.id(11527790988662431)
-,p_button_sequence=>30
-,p_button_plug_id=>wwv_flow_api.id(47511556472142024)
-,p_button_name=>'Create_Support_Ticket'
-,p_button_static_id=>'new_support_ticket_id'
-,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#:t-Button--primary:t-Button--iconRight'
-,p_button_template_id=>wwv_flow_api.id(1628209471548186289)
-,p_button_image_alt=>'Create New Support Ticket'
-,p_button_position=>'TOP_AND_BOTTOM'
-,p_button_alignment=>'LEFT'
-,p_button_redirect_url=>'f?p=&APP_ID.:166:&SESSION.::&DEBUG.:166::'
 );
 wwv_flow_api.create_page_branch(
  p_id=>wwv_flow_api.id(11537274285662439)

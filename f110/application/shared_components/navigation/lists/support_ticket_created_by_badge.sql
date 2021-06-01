@@ -17,7 +17,7 @@ wwv_flow_api.create_list(
 ,p_list_type=>'SQL_QUERY'
 ,p_list_query=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'select null as lvl, -- This Column is mandatory it seems',
-'       ''Count Tickets'' as label, -- Its a label Column',
+'       ''Total Tickets'' as label, -- Its a label Column',
 '      ''f?p=&APP_ID.:167:&SESSION.'' as target,-- ''javascript:void(0);'' as target, -- Link when the Badge is clicked',
 '       null as attribute1,',
 '       null as attribute2,',

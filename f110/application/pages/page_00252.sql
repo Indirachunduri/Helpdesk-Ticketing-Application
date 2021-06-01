@@ -27,7 +27,7 @@ wwv_flow_api.create_page(
 ,p_nav_list_template_options=>'#DEFAULT#'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210119231602'
+,p_last_upd_yyyymmddhh24miss=>'20210407144738'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(473677915165332200)
@@ -36,7 +36,9 @@ wwv_flow_api.create_page_plug(
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_api.id(1628187113092186213)
 ,p_plug_display_sequence=>10
+,p_plug_grid_column_span=>6
 ,p_plug_display_point=>'BODY_3'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 ,p_attribute_03=>'N'
@@ -44,7 +46,7 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(473682720588332381)
 ,p_plug_name=>'Breadcrumb'
-,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--compactTitle:t-BreadcrumbRegion--useBreadcrumbTitle'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_api.id(1628189753601186215)
 ,p_plug_display_sequence=>1
@@ -53,6 +55,7 @@ wwv_flow_api.create_page_plug(
 ,p_menu_id=>wwv_flow_api.id(74204132342704640)
 ,p_plug_source_type=>'NATIVE_BREADCRUMB'
 ,p_menu_template_id=>wwv_flow_api.id(1628210218163186292)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(473678224783332202)
@@ -60,7 +63,7 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(473677915165332200)
 ,p_button_name=>'SAVE'
 ,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
+,p_button_template_options=>'#DEFAULT#:t-Button--success'
 ,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
 ,p_button_image_alt=>'Apply Changes'
 ,p_button_position=>'REGION_TEMPLATE_CHANGE'
@@ -74,7 +77,7 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(473677915165332200)
 ,p_button_name=>'CANCEL'
 ,p_button_action=>'REDIRECT_PAGE'
-,p_button_template_options=>'#DEFAULT#'
+,p_button_template_options=>'#DEFAULT#:t-Button--warning'
 ,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
 ,p_button_image_alt=>'Cancel'
 ,p_button_position=>'REGION_TEMPLATE_CLOSE'
@@ -86,7 +89,7 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(473677915165332200)
 ,p_button_name=>'CREATE'
 ,p_button_action=>'SUBMIT'
-,p_button_template_options=>'#DEFAULT#'
+,p_button_template_options=>'#DEFAULT#:t-Button--success'
 ,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
 ,p_button_image_alt=>'Create'
 ,p_button_position=>'REGION_TEMPLATE_CREATE'
@@ -100,14 +103,12 @@ wwv_flow_api.create_page_button(
 ,p_button_plug_id=>wwv_flow_api.id(473677915165332200)
 ,p_button_name=>'DELETE'
 ,p_button_action=>'REDIRECT_URL'
-,p_button_template_options=>'#DEFAULT#'
+,p_button_template_options=>'#DEFAULT#:t-Button--danger'
 ,p_button_template_id=>wwv_flow_api.id(1628209988868186291)
 ,p_button_image_alt=>'Delete'
 ,p_button_position=>'REGION_TEMPLATE_DELETE'
-,p_button_redirect_url=>'javascript:apex.confirm(htmldb_delete_message,''DELETE'');'
+,p_button_redirect_url=>'javascript:apex.confirm(''Do you want to delete the note?'',''DELETE'');'
 ,p_button_execute_validations=>'N'
-,p_button_condition=>'P252_NOTE_TYPE_ID'
-,p_button_condition_type=>'NEVER'
 ,p_database_action=>'DELETE'
 );
 wwv_flow_api.create_page_branch(
@@ -118,18 +119,30 @@ wwv_flow_api.create_page_branch(
 ,p_branch_sequence=>1
 );
 wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(53186320927535699)
+,p_name=>'P252_CREATED_DATE'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(473677915165332200)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(53186400375535700)
+,p_name=>'P252_UPDATED_DATE'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(473677915165332200)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(473679340799332228)
 ,p_name=>'P252_NOTE_TYPE_ID'
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(473677915165332200)
 ,p_use_cache_before_default=>'NO'
-,p_prompt=>'Note Type Id'
 ,p_source=>'NOTE_TYPE_ID'
 ,p_source_type=>'DB_COLUMN'
 ,p_display_as=>'NATIVE_HIDDEN'
-,p_label_alignment=>'RIGHT'
-,p_field_template=>wwv_flow_api.id(1628209178832186281)
-,p_item_template_options=>'#DEFAULT#'
 ,p_attribute_01=>'Y'
 );
 wwv_flow_api.create_page_item(
@@ -145,11 +158,8 @@ wwv_flow_api.create_page_item(
 ,p_display_as=>'NATIVE_TEXT_FIELD'
 ,p_cSize=>32
 ,p_cMaxlength=>50
-,p_cHeight=>1
-,p_label_alignment=>'RIGHT'
 ,p_field_template=>wwv_flow_api.id(1628209178832186281)
 ,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'YES'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Description of Note Type.',
 '',
@@ -172,10 +182,8 @@ wwv_flow_api.create_page_item(
 ,p_cSize=>60
 ,p_cMaxlength=>1000
 ,p_cHeight=>4
-,p_label_alignment=>'RIGHT'
 ,p_field_template=>wwv_flow_api.id(1628209178832186281)
 ,p_item_template_options=>'#DEFAULT#'
-,p_lov_display_extra=>'YES'
 ,p_help_text=>'Enter a log description of the Note Type.'
 ,p_attribute_01=>'Y'
 ,p_attribute_02=>'N'
@@ -191,22 +199,18 @@ wwv_flow_api.create_page_item(
 ,p_prompt=>'Enabled'
 ,p_source=>'ENABLED'
 ,p_source_type=>'DB_COLUMN'
-,p_display_as=>'NATIVE_POPUP_LOV'
+,p_display_as=>'NATIVE_SELECT_LIST'
 ,p_named_lov=>'YES_NO'
 ,p_lov=>'.'||wwv_flow_api.id(74349933634004268)||'.'
-,p_cSize=>5
-,p_cMaxlength=>50
 ,p_cHeight=>1
-,p_label_alignment=>'RIGHT'
 ,p_field_template=>wwv_flow_api.id(1628209178832186281)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_lov_display_extra=>'YES'
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Enable or Disable Note Type.',
 'Only enabled note types are allowed to be assigned to new notes.'))
-,p_attribute_01=>'DIALOG'
-,p_attribute_02=>'FIRST_ROWSET'
-,p_attribute_04=>'N'
+,p_attribute_01=>'NONE'
+,p_attribute_02=>'N'
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(473680124444332298)
@@ -219,8 +223,26 @@ wwv_flow_api.create_page_process(
 ,p_attribute_04=>'NOTE_TYPE_ID'
 );
 wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(473680333513332303)
+ p_id=>wwv_flow_api.id(53186569975535701)
 ,p_process_sequence=>10
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'update_date'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'declare',
+'v_update varchar2(100);',
+'begin',
+'update WBS_CRM_NOTES_TYPES',
+'set LAST_UPDATE_DATE = SYSDATE',
+'where NOTE_TYPE_ID = :P252_NOTE_TYPE_ID;',
+'END;'))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(473678224783332202)
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(473680333513332303)
+,p_process_sequence=>20
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_PLSQL'
 ,p_process_name=>'Get PK'
@@ -248,11 +270,30 @@ wwv_flow_api.create_page_process(
 ,p_attribute_11=>'I:U:D'
 ,p_attribute_12=>'Y'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_success_message=>'Action Processed.'
+,p_process_success_message=>'Notes have been created/updated successfully.'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(53186617396535702)
+,p_process_sequence=>40
+,p_process_point=>'AFTER_SUBMIT'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'create_date'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'declare',
+'v_update varchar2(100);',
+'begin',
+'update WBS_CRM_NOTES_TYPES',
+'set CREATION_DATE = SYSDATE,',
+'LAST_UPDATE_DATE = SYSDATE',
+'where NOTE_TYPE_ID = :P252_NOTE_TYPE_ID;',
+'END;'))
+,p_process_clob_language=>'PLSQL'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_api.id(473678143068332202)
 );
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(473680724084332303)
-,p_process_sequence=>40
+,p_process_sequence=>50
 ,p_process_point=>'AFTER_SUBMIT'
 ,p_process_type=>'NATIVE_SESSION_STATE'
 ,p_process_name=>'reset page'

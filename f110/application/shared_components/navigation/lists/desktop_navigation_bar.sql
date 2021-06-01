@@ -81,24 +81,16 @@ wwv_flow_api.create_list_item(
 wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(89799764871460)
 ,p_list_item_display_sequence=>60
-,p_list_item_link_text=>'Setup'
-,p_list_item_link_target=>'f?p=&APP_ID.:23:&SESSION.::&DEBUG.::::'
-,p_list_item_icon=>'fa-clipboard-wrench'
+,p_list_item_link_text=>'Administration'
+,p_list_item_link_target=>'f?p=&APP_ID.:5:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-gears'
 ,p_list_item_disp_cond_type=>'FUNCTION_BODY'
 ,p_list_item_disp_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'if :F111_USER_ID > 0 then ',
 '  return true;',
 'end if;'))
 ,p_list_item_disp_condition2=>'PLSQL'
-,p_security_scheme=>wwv_flow_api.id(77166535263179064)
-,p_list_item_current_type=>'TARGET_PAGE'
-);
-wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(91056044896426)
-,p_list_item_display_sequence=>70
-,p_list_item_link_text=>'Help'
-,p_list_item_link_target=>'f?p=&APP_ID.:211:&SESSION.::&DEBUG.::::'
-,p_list_item_icon=>'fa-exclamation-circle-o'
+,p_security_scheme=>wwv_flow_api.id(77166643575181490)
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -177,8 +169,72 @@ wwv_flow_api.create_list_item(
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(1208057856070666)
+ p_id=>wwv_flow_api.id(53686329821854556)
 ,p_list_item_display_sequence=>130
+,p_list_item_link_text=>'About'
+,p_list_item_icon=>'fa-question-circle-o'
+,p_list_item_disp_cond_type=>'FUNCTION_BODY'
+,p_list_item_disp_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'if :F111_USER_ID != 0 then ',
+'  return true;',
+'else',
+'  return false;',
+'end if;'))
+,p_list_item_disp_condition2=>'PLSQL'
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(91056044896426)
+,p_list_item_display_sequence=>70
+,p_list_item_link_text=>'Help'
+,p_list_item_link_target=>'f?p=&APP_ID.:211:&SESSION.::&DEBUG.::::'
+,p_list_item_icon=>'fa-exclamation-circle-o'
+,p_parent_list_item_id=>wwv_flow_api.id(53686329821854556)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(53687873548005030)
+,p_list_item_display_sequence=>140
+,p_list_item_link_text=>'User Guide'
+,p_list_item_link_target=>'#APP_IMAGES#FlowAlgorithm.pdf'
+,p_list_item_icon=>'fa-notebook'
+,p_parent_list_item_id=>wwv_flow_api.id(53686329821854556)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(53686046818719101)
+,p_list_item_display_sequence=>160
+,p_list_item_link_text=>'About Us'
+,p_list_item_link_target=>'https://www.vivid-edge.com/about-us/'
+,p_list_item_icon=>'fa-users'
+,p_parent_list_item_id=>wwv_flow_api.id(53686329821854556)
+,p_list_item_current_type=>'NEVER'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(53688307780033507)
+,p_list_item_display_sequence=>170
+,p_list_item_link_text=>'Releases'
+,p_list_item_icon=>'fa-clock-o'
+,p_parent_list_item_id=>wwv_flow_api.id(53686329821854556)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(53786232400446589)
+,p_list_item_display_sequence=>180
+,p_list_item_link_text=>'Feedback'
+,p_list_item_link_target=>'f?p=&APP_ID.:334:&SESSION.::&DEBUG.:334:P334_APPLICATION_ID,P334_PAGE_ID:&APP_ID.,&APP_PAGE_ID.:'
+,p_list_item_icon=>'fa-user-edit'
+,p_list_item_icon_attributes=>'title="#LIST_LABEL#"'
+,p_list_item_icon_alt_attribute=>'alt="#LIST_LABEL#"'
+,p_list_item_disp_cond_type=>'EXPRESSION'
+,p_list_item_disp_condition=>':APP_PAGE_ID != 334'
+,p_list_item_disp_condition2=>'PLSQL'
+,p_parent_list_item_id=>wwv_flow_api.id(53686329821854556)
+,p_list_item_current_type=>'TARGET_PAGE'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(1208057856070666)
+,p_list_item_display_sequence=>150
 ,p_list_item_link_text=>'Logout'
 ,p_list_item_link_target=>'&LOGOUT_URL.'
 ,p_list_item_icon=>'fa-sign-out'

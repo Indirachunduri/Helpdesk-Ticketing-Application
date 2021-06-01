@@ -17,15 +17,6 @@ wwv_flow_api.create_list(
 ,p_list_status=>'PUBLIC'
 );
 wwv_flow_api.create_list_item(
- p_id=>wwv_flow_api.id(150373722955556445)
-,p_list_item_display_sequence=>5
-,p_list_item_link_text=>'<table><tr><td><img src="/i/20.2.0.00.20/menu/users_business_32.gif"></td><td>Change Session Customer (&F111_CUSTOMER_NAME.)</td></tr></table>'
-,p_list_item_link_target=>'f?p=&APP_ID.:19:&SESSION.::&DEBUG.::::'
-,p_list_item_icon=>'menu/users_business_32.gif'
-,p_security_scheme=>wwv_flow_api.id(77166643575181490)
-,p_list_item_current_type=>'TARGET_PAGE'
-);
-wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(74377625711480624)
 ,p_list_item_display_sequence=>10
 ,p_list_item_link_text=>'<table><tr><td><img src="/i/20.2.0.00.20/menu/package_32.gif"></td><td>User Administration</td></tr></table>'

@@ -21,6 +21,12 @@ wwv_flow_api.create_page(
 ,p_first_item=>'AUTO_FIRST_ITEM'
 ,p_autocomplete_on_off=>'ON'
 ,p_group_id=>wwv_flow_api.id(76725619011397757)
+,p_javascript_code_onload=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'//var image_text = $(''#main_tag'').html();',
+'//$("#P0_PAGE_TEMPLATE_BODY_1_C2_DISPLAY > a > img").after(image_text);',
+'',
+'$(''#main_tag'').css(''display'',''none'');',
+''))
 ,p_css_file_urls=>'#APP_IMAGES#classic_blue_custome_style.css'
 ,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '//.page_margin {margin-top:40px;}',
@@ -40,11 +46,18 @@ wwv_flow_api.create_page(
 '}*/',
 '',
 '#P0_PAGE_TEMPLATE_BODY_1_C2_CONTAINER> .t-Form-inputContainer{',
-'   // padding:34px;',
+'    //padding:34px;',
 '}',
 '#P0_PAGE_TEMPLATE_BODY_1_C2_DISPLAY {',
 '    margin-left :6%;',
 '}',
+'',
+'#P0_PAGE_TEMPLATE_BODY_1_C2_DISPLAY > a > img {',
+'   ',
+'   // filter: opacity(50%);',
+'    ',
+'}',
+'',
 '.banner_add:hover{',
 'transform: scale(1.0);',
 '    transition: 1s ease;',
@@ -55,6 +68,20 @@ wwv_flow_api.create_page(
 '#enterpricse_id{',
 'border-radius: 50px;',
 'border : solid gray 4px;',
+'}',
+'',
+'#centered{',
+' position: absolute;',
+'  top: 40%;',
+'  left: 42%;',
+'  transform: translate(-50%, -50%);',
+'}',
+'#homepage_text{',
+'    display: none;',
+'}',
+'',
+'#main_tag{',
+'    display:none;',
 '}'))
 ,p_page_css_classes=>'page_margin'
 ,p_page_template_options=>'#DEFAULT#'
@@ -91,7 +118,7 @@ wwv_flow_api.create_page(
 '',
 ''))
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210325180130'
+,p_last_upd_yyyymmddhh24miss=>'20210409145955'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(5631275951464497)
@@ -113,6 +140,35 @@ wwv_flow_api.create_page_plug(
 'select * from WBS_AUDIT_NEW_USER a ',
 'where  :F111_USER_ID = a.APPROVER_id',
 'and a.processed_flag != ''Y'''))
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(52692025706574392)
+,p_plug_name=>'Text Data'
+,p_region_name=>'homepage_text'
+,p_icon_css_classes=>'fa-hand-o-right'
+,p_region_template_options=>'#DEFAULT#:t-Region--removeHeader:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(1628187113092186213)
+,p_plug_display_sequence=>120
+,p_plug_new_grid_row=>false
+,p_plug_new_grid_column=>false
+,p_plug_display_point=>'BODY_3'
+,p_plug_item_display_point=>'BELOW'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'<span id=''main_tag'' style="display:none;">',
+'<span id=''centered''>',
+'<p style="color:#8c0606; font-size:20px;text-align:center">Vivid Edge - Support</p>',
+'<span style="color:#0c2596;font-size:18px; text-align:center;">Our goal is to quickly solve your issue and provide the best possible support.</span>',
+'<p style="color:#8c0606; font-size:20px;text-align:center">To Get Started</p>',
+'<p style="font-size:16px;"><span style="color:#0c2596"><span class="t-Icon fa fa-arrow-circle-right" style="margin-top:1%"></span> Review the </b> <span style="color:#8c0606;text-decoration: underline;">Common Questions section.</span><span style="co'
+||'lor:#0c2596"> Your issue may have a simple answer.</span></p>',
+'<p style="font-size:16px;"><span style="color:#0c2596"><span class="t-Icon fa fa-arrow-circle-right" style="margin-top:1%"></span> Search for </span><span style="color:#8c0606;text-decoration: underline;">Knowledg Base.</span><span style="color:#0c25'
+||'96"> Your issue may have been solved before.</span></p>',
+'<p style="font-size:16px;"><span style="color:#0c2596"><span class="t-Icon fa fa-arrow-circle-right" style="margin-top:1%"></span> If you have not found your answer then </span><span style="color:#8c0606;text-decoration: underline;">Create a new supp'
+||'ort ticket.</span></p>',
+'</span>'))
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(72287044374731713)
@@ -998,6 +1054,18 @@ wwv_flow_api.create_page_process(
 '                               :F111_OP_UNIT, :f111_repgroup, '''',:F111_tickets, :F111_tasks);'))
 ,p_process_clob_language=>'PLSQL'
 );
+wwv_flow_api.component_end;
+end;
+/
+begin
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2020.10.01'
+,p_release=>'20.2.0.00.20'
+,p_default_workspace_id=>9364619619048766
+,p_default_application_id=>10123
+,p_default_id_offset=>39116414319254909
+,p_default_owner=>'XXAPEX'
+);
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(105249742118403488)
 ,p_process_sequence=>50
@@ -1009,6 +1077,7 @@ wwv_flow_api.create_page_process(
 ':F111_SAL_IS_VALID := ''N'';'))
 ,p_process_clob_language=>'PLSQL'
 );
+null;
 wwv_flow_api.component_end;
 end;
 /

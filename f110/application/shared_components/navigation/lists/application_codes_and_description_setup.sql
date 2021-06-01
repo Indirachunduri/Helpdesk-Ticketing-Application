@@ -22,6 +22,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Order Line Status'
 ,p_list_item_link_target=>'f?p=&APP_ID.:197:&SESSION.::&DEBUG.:197:::'
 ,p_list_item_icon=>'menu/todo_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -30,6 +31,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Payment Methods'
 ,p_list_item_link_target=>'f?p=&APP_ID.:27:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/pin_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -38,6 +40,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Shipping Methods'
 ,p_list_item_link_target=>'f?p=&APP_ID.:40:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/package_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -46,6 +49,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Unit of Measure Codes'
 ,p_list_item_link_target=>'f?p=&APP_ID.:66:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/shapes_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -78,6 +82,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Item Shipping Locations'
 ,p_list_item_link_target=>'f?p=&APP_ID.:3:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/navigation_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -86,6 +91,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Regions'
 ,p_list_item_link_target=>'f?p=&APP_ID.:315:&SESSION.::&DEBUG.:RP:::'
 ,p_list_item_icon=>'menu/chart_line_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -102,6 +108,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Order Sources'
 ,p_list_item_link_target=>'f?p=&APP_ID.:288:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/tree_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -110,6 +117,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Order Types'
 ,p_list_item_link_target=>'f?p=&APP_ID.:258:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/form_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -126,6 +134,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Freight Terms'
 ,p_list_item_link_target=>'f?p=&APP_ID.:282:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/bboard_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -134,6 +143,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Payment Terms'
 ,p_list_item_link_target=>'f?p=&APP_ID.:292:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/files_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -142,6 +152,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Order Category'
 ,p_list_item_link_target=>'f?p=&APP_ID.:298:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/report_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -150,6 +161,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Sales Channel'
 ,p_list_item_link_target=>'f?p=&APP_ID.:300:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/users_business_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -158,6 +170,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Payment Terms Override'
 ,p_list_item_link_target=>'f?p=&APP_ID.:299:&SESSION.::&DEBUG.:RP,299:::'
 ,p_list_item_icon=>'menu/login_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.component_end;

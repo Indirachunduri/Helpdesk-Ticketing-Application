@@ -29,17 +29,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_display_sequence=>20
 ,p_list_item_link_text=>'Catalog'
 ,p_list_item_link_target=>'f?p=&APP_ID.:2:&SESSION.::&DEBUG.::::'
-,p_list_item_disp_cond_type=>'FUNCTION_BODY'
-,p_list_item_disp_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'if :F111_BOL_IS_VALID = ''Y'' and ',
-'   WBS_VALIDATION.does_catalog_exist(:F111_CUSTOMER_ID) ',
-'and :F111_ENABLE_ORDER_PLACEMENT = ''Y''',
-'then',
-'  return true;',
-'end if;',
-'',
-'return false;'))
-,p_list_item_disp_condition2=>'PLSQL'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -47,9 +37,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_display_sequence=>30
 ,p_list_item_link_text=>'Saved Carts'
 ,p_list_item_link_target=>'f?p=&APP_ID.:4:&SESSION.::&DEBUG.::::'
-,p_list_item_disp_cond_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
-,p_list_item_disp_condition=>'F111_USER_ID'
-,p_list_item_disp_condition2=>'0'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -57,9 +45,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_display_sequence=>40
 ,p_list_item_link_text=>'Orders'
 ,p_list_item_link_target=>'f?p=&APP_ID.:6:&SESSION.::&DEBUG.::::'
-,p_list_item_disp_cond_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
-,p_list_item_disp_condition=>'F111_USER_ID'
-,p_list_item_disp_condition2=>'0'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
@@ -67,9 +53,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_display_sequence=>50
 ,p_list_item_link_text=>'Transactions'
 ,p_list_item_link_target=>'f?p=&APP_ID.:8:&SESSION.::&DEBUG.::::'
-,p_list_item_disp_cond_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
-,p_list_item_disp_condition=>'F111_USER_ID'
-,p_list_item_disp_condition2=>'0'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(

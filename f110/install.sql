@@ -66,8 +66,6 @@ prompt --install
 @@application/shared_components/files/support_ve_banner949x79_png.sql
 @@application/shared_components/files/vec_support_intro_cloud_pic_png.sql
 @@application/shared_components/files/vivid_edge_logo_png.sql
-@@application/shared_components/files/vivid_edge_logo_156x46_png.sql
-@@application/shared_components/files/vivid_edge_logo_166x49_png.sql
 @@application/shared_components/files/vivid_edge_icon_png.sql
 @@application/shared_components/files/android_icon_144x144_png.sql
 @@application/shared_components/files/favicon_16x16_png.sql
@@ -81,8 +79,10 @@ prompt --install
 @@application/shared_components/files/wizard_graph_2_png.sql
 @@application/shared_components/files/wizard_graph_3_png.sql
 @@application/shared_components/files/wizard_graph_4_png.sql
-@@application/shared_components/files/support_banner_ve_jpg.sql
 @@application/shared_components/files/lic_agreement_png.sql
+@@application/shared_components/files/vividedge_homepage_img_jpg.sql
+@@application/shared_components/files/flowalgorithm_pdf.sql
+@@application/shared_components/files/support_banner_ve_png.sql
 @@application/plugin_settings.sql
 @@application/shared_components/security/authorizations/b_system_user_admin_and_above1.sql
 @@application/shared_components/security/authorizations/e_customer_and_above1.sql
@@ -188,6 +188,7 @@ prompt --install
 @@application/shared_components/user_interface/lovs/dollar_or_percent_dp.sql
 @@application/shared_components/user_interface/lovs/dropship_to_address.sql
 @@application/shared_components/user_interface/lovs/email_of_system_admins.sql
+@@application/shared_components/user_interface/lovs/feedback_types.sql
 @@application/shared_components/user_interface/lovs/first_row_option.sql
 @@application/shared_components/user_interface/lovs/freight_terms.sql
 @@application/shared_components/user_interface/lovs/header_or_line_hl.sql
@@ -2008,6 +2009,7 @@ prompt --install
 @@application/pages/page_00331.sql
 @@application/pages/page_00332.sql
 @@application/pages/page_00333.sql
+@@application/pages/page_00334.sql
 @@application/pages/page_31900.sql
 @@application/deployment/definition.sql
 @@application/deployment/checks.sql

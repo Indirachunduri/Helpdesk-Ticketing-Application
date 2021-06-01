@@ -37,7 +37,7 @@ wwv_flow_api.create_page(
 ,p_nav_list_template_options=>'#DEFAULT#'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210325175847'
+,p_last_upd_yyyymmddhh24miss=>'20210525204600'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(92785622196969048)
@@ -529,7 +529,7 @@ wwv_flow_api.create_page_item(
 ,p_item_sequence=>30
 ,p_item_plug_id=>wwv_flow_api.id(92785622196969048)
 ,p_use_cache_before_default=>'NO'
-,p_prompt=>'Log Entry Detail'
+,p_prompt=>'Additional Comments Detail'
 ,p_source=>'TASK_HIST'
 ,p_source_type=>'DB_COLUMN'
 ,p_display_as=>'NATIVE_TEXTAREA'

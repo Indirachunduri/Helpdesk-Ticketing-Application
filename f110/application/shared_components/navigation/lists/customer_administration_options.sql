@@ -30,6 +30,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Customer Item Numbers'
 ,p_list_item_link_target=>'f?p=&APP_ID.:76:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/dbshare_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -38,6 +39,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Catalog Access'
 ,p_list_item_link_target=>'f?p=&APP_ID.:182:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/lock_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(
@@ -46,6 +48,7 @@ wwv_flow_api.create_list_item(
 ,p_list_item_link_text=>'Change Session Customer'
 ,p_list_item_link_target=>'f?p=&APP_ID.:19:&SESSION.::&DEBUG.::::'
 ,p_list_item_icon=>'menu/files_32.gif'
+,p_list_item_disp_cond_type=>'NEVER'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
 );
 wwv_flow_api.create_list_item(

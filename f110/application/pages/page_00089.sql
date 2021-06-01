@@ -32,7 +32,7 @@ wwv_flow_api.create_page(
 ,p_required_role=>wwv_flow_api.id(77166535263179064)
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210326161009'
+,p_last_upd_yyyymmddhh24miss=>'20210405155239'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(79254930579912363)
@@ -423,6 +423,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(79256924387912368)
 ,p_name=>'P89_PHONE_NUMBER'
+,p_is_required=>true
 ,p_item_sequence=>40
 ,p_item_plug_id=>wwv_flow_api.id(79254930579912363)
 ,p_use_cache_before_default=>'NO'
@@ -435,7 +436,7 @@ wwv_flow_api.create_page_item(
 ,p_display_when=>'P89_ASSIGN_CUST_MODE'
 ,p_display_when2=>'N'
 ,p_display_when_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
-,p_field_template=>wwv_flow_api.id(1628209178832186281)
+,p_field_template=>wwv_flow_api.id(1628209327957186283)
 ,p_item_template_options=>'#DEFAULT#'
 ,p_help_text=>'Contacts phone number'
 ,p_attribute_01=>'N'

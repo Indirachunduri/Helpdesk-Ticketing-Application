@@ -20,7 +20,7 @@ wwv_flow_api.create_flow(
 ,p_application_group_name=>'20.2 Sample Apps'
 ,p_page_view_logging=>'YES'
 ,p_page_protection_enabled_y_n=>'Y'
-,p_checksum_salt_last_reset=>'20210326162011'
+,p_checksum_salt_last_reset=>'20210525221030'
 ,p_bookmark_checksum_function=>'MD5'
 ,p_accept_old_checksums=>false
 ,p_max_session_length_sec=>28800
@@ -35,7 +35,7 @@ wwv_flow_api.create_flow(
 ,p_populate_roles=>'A'
 ,p_application_tab_set=>1
 ,p_logo_type=>'I'
-,p_logo=>'#APP_IMAGES#vivid_edge_logo_166x49.png'
+,p_logo=>'#APP_IMAGES#vivid_edge_logo.png'
 ,p_favicons=>'<link rel="shortcut icon" href="#APP_IMAGES#favicon.ico"><link rel="icon" sizes="16x16" href="#APP_IMAGES#favicon.ico"><link rel="icon" sizes="32x32" href="#APP_IMAGES#favicon.ico"><link rel="apple-touch-icon" sizes="144x144" href="#APP_IMAGES#favico'
 ||'n.ico">'
 ,p_public_user=>'APEX_PUBLIC_USER'
@@ -54,9 +54,9 @@ wwv_flow_api.create_flow(
 ,p_auto_time_zone=>'N'
 ,p_friendly_url=>'N'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210326162011'
+,p_last_upd_yyyymmddhh24miss=>'20210525221030'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
-,p_files_version=>34
+,p_files_version=>38
 ,p_ui_type_name => null
 ,p_print_server_type=>'INSTANCE'
 );

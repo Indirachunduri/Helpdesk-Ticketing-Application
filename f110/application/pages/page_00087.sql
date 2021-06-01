@@ -47,18 +47,32 @@ wwv_flow_api.create_page(
 ,p_nav_list_template_options=>'#DEFAULT#'
 ,p_page_is_public_y_n=>'Y'
 ,p_last_updated_by=>'INDIRA.CHUNDURI'
-,p_last_upd_yyyymmddhh24miss=>'20210212201753'
+,p_last_upd_yyyymmddhh24miss=>'20210406182102'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(53185649559535692)
+,p_plug_name=>'Contact US'
+,p_region_template_options=>'#DEFAULT#:t-Region--removeHeader:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(1628187113092186213)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY_2'
+,p_plug_source=>'<h3 style="font-style: oblique">Get in touch</h3><h5 style="font-style: oblique">If you have any questions, please feel free to drop us an email by click on the eMail button below and message your query. We''ll get back to you soon.</h5><br>'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(70848016539370312)
 ,p_name=>'Customer Service'
+,p_parent_plug_id=>wwv_flow_api.id(53185649559535692)
 ,p_template=>wwv_flow_api.id(1628187113092186213)
-,p_display_sequence=>28
+,p_display_sequence=>20
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_new_grid_row=>false
 ,p_grid_column_span=>4
-,p_display_point=>'BODY_2'
+,p_display_point=>'BODY'
 ,p_item_display_point=>'BELOW'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
@@ -185,39 +199,26 @@ wwv_flow_api.create_report_columns(
 ,p_column_heading=>'Contact Info'
 ,p_use_as_row_header=>'N'
 ,p_column_html_expression=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'#CONTACT#</br>',
-'#TITLE#</br>',
-'#EMAIL_ADDRESS#</br>',
-'#PHONE#</br></br>',
-'',
-'<a href=''f?p=&APP_ID.:84:&SESSION.::NO::P84_SALES_REP_ID:#SALES_REP_ID#'' class=''button''><span class="fa fa-comments" aria-hidden="true"></span>eMail</a>'))
+'<span class="icon fa fa-envelope-user" style="font-style:oblique">&nbsp;<b>#CONTACT#</b></span></br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#TITLE#</br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EMAIL_ADDRESS#</br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#PHONE#</br></br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=''f?p=&APP_ID.:84:&SESSION.::NO::P84_SALES_REP_ID:#SALES_REP_ID#'' class=''button''><span class="fa fa-mail-forward" aria-hidden="true"></span>eMail</a>'))
 ,p_derived_column=>'Y'
 ,p_include_in_export=>'Y'
-);
-wwv_flow_api.create_page_plug(
- p_id=>wwv_flow_api.id(79485625008960826)
-,p_plug_name=>'Contact Us'
-,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--compactTitle:t-BreadcrumbRegion--useBreadcrumbTitle'
-,p_component_template_options=>'#DEFAULT#'
-,p_plug_template=>wwv_flow_api.id(1628189753601186215)
-,p_plug_display_sequence=>1
-,p_plug_display_point=>'REGION_POSITION_01'
-,p_plug_item_display_point=>'BELOW'
-,p_menu_id=>wwv_flow_api.id(74204132342704640)
-,p_plug_source_type=>'NATIVE_BREADCRUMB'
-,p_menu_template_id=>wwv_flow_api.id(1628210218163186292)
-,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(79498529733096933)
 ,p_name=>'Administration'
+,p_parent_plug_id=>wwv_flow_api.id(53185649559535692)
 ,p_template=>wwv_flow_api.id(1628187113092186213)
-,p_display_sequence=>38
+,p_display_sequence=>30
+,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_new_grid_row=>false
 ,p_grid_column_span=>4
-,p_display_point=>'BODY_2'
+,p_display_point=>'BODY'
 ,p_item_display_point=>'BELOW'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
@@ -242,6 +243,14 @@ wwv_flow_api.create_report_region(
 'and sr.enabled_flag = ''Y''',
 'and sr.SALES_REP_ID = uuf.FILE_SALESREP_ID(+)',
 'order by t.title, sr.name_full;'))
+,p_display_when_condition=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ',
+'sa.sales_rep_id',
+'from wbs_sales_rep_assignments sa, wbs_sales_reps sr',
+'where sa.customer_id = :F111_CUSTOMER_ID',
+'and sa.SALES_REP_ID = sr.sales_rep_id(+)',
+'and sr.display_category = 2'))
+,p_display_condition_type=>'EXISTS'
 ,p_ajax_enabled=>'Y'
 ,p_query_row_template=>wwv_flow_api.id(1628196818171186240)
 ,p_query_num_rows=>15
@@ -311,11 +320,11 @@ wwv_flow_api.create_report_columns(
 ,p_column_heading=>'Contact Info'
 ,p_use_as_row_header=>'N'
 ,p_column_html_expression=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'#CONTACT#</br>',
-'#TITLE#</br>',
-'#EMAIL_ADDRESS#</br>',
-'#PHONE#</br></br>',
-'<a href="f?p=&APP_ID.:84:&SESSION.::NO::P84_SALES_REP_ID:#SALES_REP_ID#" class=''button''><span class="fa fa-comments" aria-hidden="true"></span> eMail</a>',
+'<span class="icon fa fa-envelope-user" style="font-style:oblique">&nbsp;<b>#CONTACT#</b></span></br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#TITLE#</br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EMAIL_ADDRESS#</br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#PHONE#</br></br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="f?p=&APP_ID.:84:&SESSION.::NO::P84_SALES_REP_ID:#SALES_REP_ID#" class=''button''><span class="fa fa-mail-forward" aria-hidden="true"></span> eMail</a>',
 ''))
 ,p_derived_column=>'Y'
 ,p_include_in_export=>'Y'
@@ -348,13 +357,14 @@ wwv_flow_api.create_report_columns(
 wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(174485719186508506)
 ,p_name=>'Customer Service Default'
+,p_parent_plug_id=>wwv_flow_api.id(53185649559535692)
 ,p_template=>wwv_flow_api.id(1628187113092186213)
-,p_display_sequence=>8
+,p_display_sequence=>10
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_new_grid_row=>false
 ,p_grid_column_span=>4
-,p_display_point=>'BODY_2'
+,p_display_point=>'BODY'
 ,p_item_display_point=>'BELOW'
 ,p_source_type=>'NATIVE_SQL_REPORT'
 ,p_query_type=>'SQL'
@@ -486,14 +496,28 @@ wwv_flow_api.create_report_columns(
 ,p_column_heading=>'Contact Info'
 ,p_use_as_row_header=>'N'
 ,p_column_html_expression=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'#CONTACT#</br>',
-'#TITLE#</br>',
-'#EMAIL_ADDRESS#</br>',
-'#PHONE#</br></br>',
-'<a href="f?p=&APP_ID.:84:&SESSION.::NO::P84_SALES_REP_ID:#SALES_REP_ID#" class=''button''><span class="fa fa-comments" aria-hidden="true"></span> eMail</a>',
+'<span class="icon fa fa-envelope-user" style="font-style:oblique">&nbsp;<b>#CONTACT#</b></span></br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#TITLE#</br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#EMAIL_ADDRESS#</br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#PHONE#</br></br>',
+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="f?p=&APP_ID.:84:&SESSION.::NO::P84_SALES_REP_ID:#SALES_REP_ID#" class=''button''><span class="fa fa-mail-forward" aria-hidden="true"></span> eMail</a>',
 ''))
 ,p_derived_column=>'Y'
 ,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(79485625008960826)
+,p_plug_name=>'Contact Us'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--compactTitle:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(1628189753601186215)
+,p_plug_display_sequence=>1
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_plug_item_display_point=>'BELOW'
+,p_menu_id=>wwv_flow_api.id(74204132342704640)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>wwv_flow_api.id(1628210218163186292)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
 wwv_flow_api.component_end;
 end;
